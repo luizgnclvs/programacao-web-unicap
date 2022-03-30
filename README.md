@@ -4,4 +4,4 @@ Exercícios propostos pelo professor ao decorrer da disciplina de Programação 
 
 ### Índice
 
-- Array -----> <a href="https://pw-exercicio-array.surge.sh/" target="blank">[Deploy]</a>
+- Array -----> <a href="https://pw-exercicio-array.surge.sh/" target="_blank">[Deploy]</a>
