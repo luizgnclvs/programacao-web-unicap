@@ -5,3 +5,4 @@ Exercícios propostos pelo professor ao decorrer da disciplina de Programação 
 ### Índice
 
 - Array -----> [Deploy](https://pw-exercicio-array.surge.sh/)
+- Tabela de Números Aleatórios -----> [Deploy](http://pw-exercicio-tabela-num.surge.sh/)
