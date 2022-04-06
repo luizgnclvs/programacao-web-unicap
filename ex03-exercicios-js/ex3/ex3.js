@@ -1,12 +1,11 @@
 const body = document.getElementById("body");
 
-function helloName() {
+function helloNameNotNull() {
     let name = prompt("Insira seu nome");
-    if (name = "") {
-        let name = prompt("Insira seu nome");        
-    } else {
-        alert(`Olá, ${name}!`);
-    }
+    while (name === "") {
+        name = prompt("Insira seu nome");
+    }   
+    alert(`Olá, ${name}!`);
 }
 
-body.onload = helloName;
+body.onload = helloNameNotNull;
