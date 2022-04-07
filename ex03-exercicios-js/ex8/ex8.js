@@ -34,13 +34,13 @@ function printBills() {
 
     for (let i = 0; i < wallet.length; i++) {
         if (i < 7) {
-            textBody.innerHTML += `Notas de R$ ${wallet[i][0].toFixed(2)} reais: <b>${wallet[i][1]}</b>\n`
+            textBody.innerHTML += `Notas de R$ ${wallet[i][0].toFixed(2)} reais: \t<b>${wallet[i][1]}</b>\n`
         } else if (i == 7) {
-            textBody.innerHTML += `Moedas de R$ ${wallet[i][0].toFixed(2)} real: <b>${wallet[i][1]}</b>\n`
+            textBody.innerHTML += `Moedas de R$ ${wallet[i][0].toFixed(2)} real: \t<b>${wallet[i][1]}</b>\n`
         } else if (i < 12) {
-            textBody.innerHTML += `Moedas de R$ ${wallet[i][0].toFixed(2)} centavos: <b>${wallet[i][1]}</b>\n`
+            textBody.innerHTML += `Moedas de R$ ${wallet[i][0].toFixed(2)} centavos: \t<b>${wallet[i][1]}</b>\n`
         } else {
-            textBody.innerHTML += `Moedas de R$ ${wallet[i][0].toFixed(2)} centavo: <b>${wallet[i][1]}</b>\n`
+            textBody.innerHTML += `Moedas de R$ ${wallet[i][0].toFixed(2)} centavo: \t<b>${wallet[i][1]}</b>\n`
         }
     }
 
