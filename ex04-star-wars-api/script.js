@@ -1,9 +1,10 @@
+const body = document.getElementsByTagName("body");
 const starWarsTable = document.getElementById("table");
 const btFetch = document.getElementById("fetch");
 const btPrevious = document.getElementById("previous");
 const btNext = document.getElementById("next");
 
-let people = [{name: "×××××", species: "×××××", birth_year: "×××××", homeworld: "×××××", height: "×××××", gender: "×××××", eye_color: "×××××"}]
+let people = [{name: "", species: "", birth_year: "", homeworld: "", height: "", gender: "", eye_color: ""}]
 let currentPage = "https://swapi.dev/api/people";
 let nextPage = null;
 let previousPage = null;
@@ -20,18 +21,19 @@ let fieldsTranslation = {
 
 const fetchStarWars = () => {
     fetch(currentPage)
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
-        people = data.results;
-        nextPage = data.next;
-        previousPage = data.previous;
-        showStarWarsTable();
-    })
-    .catch((err) => {
-        console.log("Erro recebido: ", err);
-    });
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            people = data.results;
+            nextPage = data.next;
+            previousPage = data.previous;
+            console.log("Fetch executado com sucesso");
+            showStarWarsTable();
+        })
+        .catch((err) => {
+            console.log("Erro recebido: ", err);
+        });
 };
 
 function showStarWarsTable () {
@@ -40,25 +42,45 @@ function showStarWarsTable () {
 
     starWarsTable.innerHTML = "";
 
-    showStarWarsTable.innerHTML += `<thead><tr>`;
+    let head = document.createElement("thead");
+    let headRow = document.createElement("tr");
 
     for (let field in fieldsTranslation) {
-        starWarsTable.innerHTML += `<th>${fieldsTranslation[field]}</th>`
+        let headCell = document.createElement("th");
+
+        let headStr = `${fieldsTranslation[field]}`;
+        console.log(headStr);
+        let headText = document.createTextNode(headStr);
+
+        headCell.appendChild(headText);
+        headRow.appendChild(headCell);
     }
 
-    showStarWarsTable.innerHTML += `</tr></thead><tbody>`;
+    starWarsTable.appendChild(head);
+
+    let body = document.createElement("tbody");
 
     for (let i = 0; i < people.length; i++) {
-        starWarsTable.innerHTML += `<tr>`;
+        let row = document.createElement("tr");
 
         for (let field in people[i]) {
-            starWarsTable.innerHTML += `<td>${people[field]}</td>`
+            let cell = document.createElement("td");
+
+            let str = `${people[field]}`;
+            console.log(str);
+
+            let cellText = document.createTextNode(str);
+
+            cell.appendChild(cellText);
+            row.appendChild(cell);
         }
 
-        starWarsTable.innerHTML += `</tr>`;
+        body.appendChild(row);
     }
 
-    starWarsTable.innerHTML += `</tbody>`;
+    starWarsTable.appendChild(body);
+
+    starWarsTable.setAttribute("border", "2");
 }
 
 const fetchNext = () => {
