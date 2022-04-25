@@ -4,18 +4,18 @@ const btFetch = document.getElementById("fetch");
 const btPrevious = document.getElementById("previous");
 const btNext = document.getElementById("next");
 
-let people = [{name: "", species: "", birth_year: "", homeworld: "", height: "", gender: "", eye_color: ""}]
+let people = [{name: "", birth_year: "", gender: "", height: "", mass: "", hair_color: "", eye_color: ""}]
 let currentPage = "https://swapi.dev/api/people";
 let nextPage = null;
 let previousPage = null;
 
 let fieldsTranslation = {
     name: "Nome",
-    species: "Espécie",
     birth_year: "Ano de Nascimento",
-    homeworld: "Planeta Natal",
-    height: "Altura",
     gender: "Gênero",
+    height: "Altura",
+    mass: "Massa",
+    hair_color: "Cor do Cabelo",
     eye_color: "Cor dos Olhos"
 };
 
@@ -42,34 +42,30 @@ function showStarWarsTable () {
 
     starWarsTable.innerHTML = "";
 
-    let head = document.createElement("thead");
-    let headRow = document.createElement("tr");
+    const head = document.createElement("thead");
+    const headRow = document.createElement("tr");
 
     for (let field in fieldsTranslation) {
         let headCell = document.createElement("th");
-
-        let headStr = `${fieldsTranslation[field]}`;
-        console.log(headStr);
-        let headText = document.createTextNode(headStr);
+        let headText = document.createTextNode(`${fieldsTranslation[field]}`);
 
         headCell.appendChild(headText);
         headRow.appendChild(headCell);
     }
 
+    head.appendChild(headRow);
+
     starWarsTable.appendChild(head);
 
-    let body = document.createElement("tbody");
+    const body = document.createElement("tbody");
 
     for (let i = 0; i < people.length; i++) {
         let row = document.createElement("tr");
 
-        for (let field in people[i]) {
+        for (let field in fieldsTranslation) {
             let cell = document.createElement("td");
 
-            let str = `${people[field]}`;
-            console.log(str);
-
-            let cellText = document.createTextNode(str);
+            let cellText = document.createTextNode(`${people[i][field]}`);
 
             cell.appendChild(cellText);
             row.appendChild(cell);
