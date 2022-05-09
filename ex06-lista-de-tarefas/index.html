@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TO-DO List</title>
     <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/3.4.1/parse.min.js"></script>
     <link rel="stylesheet" href="style.css"
 </head>
 <body>
-    <h1>Lista de Tarefas</h1> <hr>
-    <label for="task">Tarefa:</label>
-    <input id="task">
-    <button id="insert">Inserir</button> <hr>
-    <div id="todo-list">
-
+    <div class="title">
+        <h1>Tarefas</h1>
     </div>
-    <hr>
-    <div id="done-list">
-
+    <label for="task" class="add-task">
+        <span class="insert-text">+</span>
+        <input id="task" placeholder="Adicionar nova tarefa">
+        <button id="insert">Adicionar</button>
+    </label>
+    <ul id="todo-list"></ul>
+    <div class="show">
+        <button id="show">Mostrar Concluídas</button>
     </div>
+    <ul id="done-list"></ul>
 </body>
 </html>
