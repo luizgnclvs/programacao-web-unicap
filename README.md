@@ -9,3 +9,4 @@ Exercícios propostos pelo professor ao decorrer da disciplina de Programação 
 - Exercícios JS -----> [Deploy](https://pw-exercicios-js.surge.sh/)
 - Star Wars API -----> [Deploy](http://star-wars-api-characters.surge.sh/)
 - Back4App -----> [Deploy](http://watchlist-api.surge.sh/)
+- CheckList -----> [Deploy](https://pw-checklist.surge.sh/)
